@@ -2,7 +2,7 @@ manifestVersion: 1
 id: ordinals
 category: bitcoin
 name: Ordinals
-version: "0.5.1"
+version: "0.15.0"
 tagline: Trustlessly view Ordinal inscriptions using your Bitcoin node.
 description: >
   A block explorer to trustlessly view Ordinal inscriptions. Search blocks, transactions, outputs, and individual satoshis.
@@ -17,7 +17,7 @@ developer: Casey Rodarmor
 website: https://ordinals.com/
 dependencies:
   - bitcoin
-repo: https://github.com/casey/ord
+repo: https://github.com/ordinals/ord
 support: https://discord.gg/ordinals
 port: 4000
 gallery:
@@ -27,5 +27,3 @@ gallery:
 path: ""
 deterministicPassword: false
 torOnly: false
-submitter: Umbrel
-submission: https://github.com/getumbrel/umbrel-apps/pull/458
