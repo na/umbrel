@@ -8,9 +8,7 @@ services:
       PROXY_AUTH_ADD: "false"
 
   ord:
-    build:
-      context: ~/ord
-      dockerfile: ~/ord/Dockerfile
+    image: nateanderson/ord:latest@sha256:5dacd1f9344ee018bc7b2a93aa6ae2d1d1739783bc40987ba71927e368f6c8a3
     # This needs to run as root
     # user: "1000:1000"
     restart: on-failure
