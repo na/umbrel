@@ -8,7 +8,7 @@ services:
       PROXY_AUTH_ADD: "false"
 
   ord:
-    image: na/ord:latest
+    image: ordinals/ord:latest
     # This needs to run as root
     # user: "1000:1000"
     restart: on-failure
