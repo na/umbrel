@@ -3,17 +3,17 @@ version: "3.7"
 services:
   app_proxy:
     environment:
-      APP_HOST: na_ordinals_ord_1
+      APP_HOST: ordinals_ord_1
       APP_PORT: 80
       PROXY_AUTH_ADD: "false"
 
   ord:
-    image: nateanderson/ord:latest@sha256:5dacd1f9344ee018bc7b2a93aa6ae2d1d1739783bc40987ba71927e368f6c8a3
+    image: nmfretz/ord:0.15.0-test
     # This needs to run as root
-    user: "1000:1000"
+    # user: "1000:1000"
     restart: on-failure
     # First-inscription-height may not be needed in the future
-    command: "/usr/local/bin/ord --data-dir /var/lib/ord --bitcoin-data-dir /var/lib/bitcoind --rpc-url ${APP_BITCOIN_NODE_IP}:${APP_BITCOIN_RPC_PORT} --chain ${APP_BITCOIN_NETWORK} server --http"
+    command: "--data-dir /var/lib/ord --bitcoin-data-dir /var/lib/bitcoind --rpc-url ${APP_BITCOIN_NODE_IP}:${APP_BITCOIN_RPC_PORT} --chain ${APP_BITCOIN_NETWORK} server --http"
     volumes:
       - ${APP_DATA_DIR}/data:/var/lib/ord
       - ${APP_BITCOIN_DATA_DIR}:/var/lib/bitcoind:ro
