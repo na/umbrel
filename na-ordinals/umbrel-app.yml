@@ -25,7 +25,7 @@ dependencies:
   - bitcoin
 repo: https://github.com/ordinals/ord
 support: https://discord.gg/ordinals
-port: 4000
+port: 4001
 gallery:
   - https://na.github.io/umbrel-app-store/ordinals/1.jpg
   - https://na.github.io/umbrel-app-store/ordinals/2.jpg
