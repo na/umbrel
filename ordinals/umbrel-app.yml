@@ -2,6 +2,7 @@ manifestVersion: 1
 id: ordinals
 category: bitcoin
 name: Ordinals
+icon: https://na.github.io/umbrel-app-store/ordinals/icon.svg
 version: "0.16.0"
 tagline: Trustlessly view Ordinal inscriptions using your Bitcoin node.
 description: >
@@ -26,9 +27,9 @@ repo: https://github.com/ordinals/ord
 support: https://discord.gg/ordinals
 port: 4000
 gallery:
-  - 1.jpg
-  - 2.jpg
-  - 3.jpg
+  - https://na.github.io/umbrel-app-store/ordinals/1.jpg
+  - https://na.github.io/umbrel-app-store/ordinals/2.jpg
+  - https://na.github.io/umbrel-app-store/ordinals/3.jpg
 path: ""
 deterministicPassword: false
 torOnly: false
