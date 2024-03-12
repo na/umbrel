@@ -3,12 +3,12 @@ version: "3.7"
 services:
   app_proxy:
     environment:
-      APP_HOST: na-ordinals_ord_1
+      APP_HOST: ordinals_ord_1
       APP_PORT: 80
       PROXY_AUTH_ADD: "false"
 
   ord:
-    image: nmfretz/ord:0.15.0-test
+    image: nateanderson/ord:0.16.0@sha256:3fff68f9e493f4cd326c01326972ce75cd52f8c707731cc1a4b3009d595a3a7a
     # This needs to run as root
     # user: "1000:1000"
     restart: on-failure
