@@ -13,7 +13,7 @@ services:
     # user: "1000:1000"
     restart: on-failure
     # First-inscription-height may not be needed in the future
-    command: "--data-dir /var/lib/ord --bitcoin-data-dir /var/lib/bitcoind --rpc-url ${APP_BITCOIN_NODE_IP}:${APP_BITCOIN_RPC_PORT} --chain ${APP_BITCOIN_NETWORK} server --http"
+    command: "--data-dir /var/lib/ord --bitcoin-data-dir /var/lib/bitcoind --bitcoin-rpc-url ${APP_BITCOIN_NODE_IP}:${APP_BITCOIN_RPC_PORT} --chain ${APP_BITCOIN_NETWORK} server --http"
     volumes:
       - ${APP_DATA_DIR}/data:/var/lib/ord
       - ${APP_BITCOIN_DATA_DIR}:/var/lib/bitcoind:ro
