@@ -3,7 +3,7 @@ id: na-ordinals
 category: bitcoin
 name: Ordinals
 icon: https://na.github.io/umbrel-app-store/ordinals/icon.svg
-version: "0.16.0"
+version: "0.17.1"
 tagline: Trustlessly view Ordinal inscriptions using your Bitcoin node.
 description: >
   A block explorer to trustlessly view Ordinal inscriptions. Search blocks, transactions, outputs, and individual satoshis.
@@ -18,7 +18,7 @@ releaseNotes: >-
   This is handled for you automatically by Umbrel when you update the app. 
 
 
-  This release updates Ord from version 0.15.0 to 0.16.0. Full release notes for Ord can be found at: https://github.com/ordinals/ord/releases
+  This release updates Ord from version 0.16.0 to 0.17.1. Full release notes for Ord can be found at: https://github.com/ordinals/ord/releases
 developer: Casey Rodarmor
 website: https://ordinals.com/
 dependencies:

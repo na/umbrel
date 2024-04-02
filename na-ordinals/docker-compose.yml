@@ -8,12 +8,12 @@ services:
       PROXY_AUTH_ADD: "false"
 
   ord:
-    image: nateanderson/ord:0.16.0@sha256:3fff68f9e493f4cd326c01326972ce75cd52f8c707731cc1a4b3009d595a3a7a
+    image: nateanderson/ord:0.17.1@sha256:8317571d2d7e338a379bbdb3c58ba7876b422becba377da47c0d28b6d0c5631a
     # This needs to run as root
     # user: "1000:1000"
     restart: on-failure
     # First-inscription-height may not be needed in the future
-    command: "--data-dir /var/lib/ord --bitcoin-data-dir /var/lib/bitcoind --bitcoin-rpc-url ${APP_BITCOIN_NODE_IP}:${APP_BITCOIN_RPC_PORT} --chain ${APP_BITCOIN_NETWORK} server --http"
+    command: "ord --data-dir /var/lib/ord --bitcoin-data-dir /var/lib/bitcoind --bitcoin-rpc-url ${APP_BITCOIN_NODE_IP}:${APP_BITCOIN_RPC_PORT} --chain ${APP_BITCOIN_NETWORK} --index-runes server --http"
     volumes:
       - ${APP_DATA_DIR}/data/ord:/var/lib/ord
       - ${APP_BITCOIN_DATA_DIR}:/var/lib/bitcoind:ro
