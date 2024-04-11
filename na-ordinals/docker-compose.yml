@@ -8,12 +8,23 @@ services:
       PROXY_AUTH_ADD: "false"
 
   ord:
-    image: nateanderson/ord:0.17.1@sha256:8317571d2d7e338a379bbdb3c58ba7876b422becba377da47c0d28b6d0c5631a
+    image: nateanderson/ord:0.18.1@sha256:627aec0e749c4514995807ac2cf1a4dae1d035034356a106668ca2465545faef
     # This needs to run as root
     # user: "1000:1000"
     restart: on-failure
-    # First-inscription-height may not be needed in the future
-    command: "ord --data-dir /var/lib/ord --bitcoin-data-dir /var/lib/bitcoind --bitcoin-rpc-url ${APP_BITCOIN_NODE_IP}:${APP_BITCOIN_RPC_PORT} --chain ${APP_BITCOIN_NETWORK} --index-runes server --http"
+    command: "ord server --http"
     volumes:
       - ${APP_DATA_DIR}/data/ord:/var/lib/ord
       - ${APP_BITCOIN_DATA_DIR}:/var/lib/bitcoind:ro
+    environment:
+      ORD_DATA_DIR: "/var/lib/ord"
+      ORD_BITCOIN_DATA_DIR: "/var/lib/bitcoind"
+      ORD_COOKIE_FILE: "/var/lib/bitcoind/.cookie"
+      ORD_BITCOIN_RPC_USERNAME: "${APP_BITCOIN_RPC_USER}"
+      ORD_BITCOIN_RPC_PASSWORD: "${APP_BITCOIN_RPC_PASS}"
+      ORD_BITCOIN_RPC_URL: "${APP_BITCOIN_NODE_IP}:${APP_BITCOIN_RPC_PORT}"
+      ORD_CHAIN: "${APP_BITCOIN_NETWORK}"
+      # First-inscription-height may not be needed in the future. It would be nice to remove it so that other chains like testnet are not impacted.
+      ORD_FIRST_INSCRIPTION_HEIGHT: "767430"
+      ORD_INDEX_RUNES: "true"
+      # TODO: consider index-sats
